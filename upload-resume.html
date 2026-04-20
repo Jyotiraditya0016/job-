@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume - AI Job Portal</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-robot"></i>
+                <span>AI Job Portal</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="upload-resume.html" class="nav-item active">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload Resume</span>
+                </a>
+                <a href="job-matches.html" class="nav-item">
+                    <i class="fas fa-magic"></i>
+                    <span>Job Matches</span>
+                </a>
+                <a href="applications.html" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search jobs...">
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile" id="userProfile">
+                        <img src="../../assets/images/default-avatar.png" alt="Profile">
+                        <span>John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <h1 class="page-title">Upload Your Resume</h1>
+                
+                <div class="upload-container">
+                    <div class="upload-card">
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drag & Drop Your Resume</h3>
+                            <p>Supported formats: PDF, DOC, DOCX (Max size: 16MB)</p>
+                            <input type="file" id="fileInput" accept=".pdf,.doc,.docx" hidden>
+                            <button class="btn btn-primary" id="selectFileBtn">
+                                <i class="fas fa-folder-open"></i>
+                                Browse Files
+                            </button>
+                        </div>
+                        
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="file-info" id="fileInfo"></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                            <p class="progress-text" id="progressText">0% Uploaded</p>
+                        </div>
+                        
+                        <div class="upload-result" id="uploadResult" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Resume Uploaded Successfully!</h3>
+                            <p>Our AI is analyzing your resume...</p>
+                            <div class="result-actions">
+                                <a href="job-matches.html" class="btn btn-primary">
+                                    View Job Matches
+                                </a>
+                                <button class="btn btn-outline" id="uploadAnotherBtn">
+                                    Upload Another
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-info">
+                        <h3>What happens after upload?</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>AI Analysis</strong>
+                                    <p>Our NLP algorithms extract your skills, experience, and education</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Job Matching</strong>
+                                    <p>We compare your profile with thousands of job descriptions</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-tasks"></i>
+                                <div>
+                                    <strong>Skill Gap Analysis</strong>
+                                    <p>Get personalized recommendations for missing skills</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <strong>Resume Scoring</strong>
+                                    <p>Receive detailed scores on your resume quality</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Parsed Data Preview (shown after upload) -->
+                <div class="parsed-data" id="parsedData" style="display: none;">
+                    <h2>Extracted Information</h2>
+                    
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <h3>
+                                <i class="fas fa-code"></i>
+                                Skills
+                            </h3>
+                            <div class="skills-tags" id="skillsContainer">
+                                <!-- Skills will be added here -->
+                            </div>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h3>
+                                <i class="fas fa-briefcase"></i>
+                                Experience
+                            </h3>
+                            <div id="experienceContainer"></div>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h3>
+                                <i class="fas fa-graduation-cap"></i>
+                                Education
+                            </h3>
+                            <div id="educationContainer"></div>
+                        </div>
+                        
+                        <div class="data-card">
+                            <h3>
+                                <i class="fas fa-chart-pie"></i>
+                                Resume Score
+                            </h3>
+                            <div class="score-circle" id="resumeScore">
+                                <span>85</span>%
+                            </div>
+                            <div class="score-details" id="scoreDetails"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/jobseeker.js"></script>
+</body>
+</html>

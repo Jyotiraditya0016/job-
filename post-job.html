@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - AI Job Portal</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-robot"></i>
+                <span>AI Job Portal</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="post-job.html" class="nav-item active">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Post a Job</span>
+                </a>
+                <a href="manage-jobs.html" class="nav-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Manage Jobs</span>
+                </a>
+                <a href="view-applicants.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>View Applicants</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-building"></i>
+                    <span>Company Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="user-profile" id="userProfile">
+                        <img src="../../assets/images/company-avatar.png" alt="Profile">
+                        <span>Tech Corp</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <h1 class="page-title">Post a New Job</h1>
+                
+                <div class="upload-container">
+                    <div class="upload-card">
+                        <form id="postJobForm" class="auth-form">
+                            <div class="form-group">
+                                <label for="jobTitle">
+                                    <i class="fas fa-briefcase"></i>
+                                    Job Title *
+                                </label>
+                                <input type="text" id="jobTitle" name="title" required 
+                                       placeholder="e.g., Senior Software Engineer">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">
+                                    <i class="fas fa-building"></i>
+                                    Company Name *
+                                </label>
+                                <input type="text" id="company" name="company" required 
+                                       placeholder="Enter company name">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Location *
+                                    </label>
+                                    <input type="text" id="location" name="location" required 
+                                           placeholder="e.g., New York, NY">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="employmentType">
+                                        <i class="fas fa-clock"></i>
+                                        Employment Type *
+                                    </label>
+                                    <select id="employmentType" name="employment_type" required>
+                                        <option value="">Select type</option>
+                                        <option value="full_time">Full Time</option>
+                                        <option value="part_time">Part Time</option>
+                                        <option value="contract">Contract</option>
+                                        <option value="internship">Internship</option>
+                                        <option value="remote">Remote</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="salaryMin">
+                                        <i class="fas fa-money-bill"></i>
+                                        Minimum Salary ($)
+                                    </label>
+                                    <input type="number" id="salaryMin" name="salary_min" 
+                                           placeholder="e.g., 60000">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="salaryMax">
+                                        <i class="fas fa-money-bill"></i>
+                                        Maximum Salary ($)
+                                    </label>
+                                    <input type="number" id="salaryMax" name="salary_max" 
+                                           placeholder="e.g., 100000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">
+                                    <i class="fas fa-align-left"></i>
+                                    Job Description *
+                                </label>
+                                <textarea id="description" name="description" rows="6" required 
+                                          placeholder="Describe the job responsibilities, requirements, and benefits..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="requiredSkills">
+                                    <i class="fas fa-code"></i>
+                                    Required Skills *
+                                </label>
+                                <input type="text" id="requiredSkills" name="required_skills" required 
+                                       placeholder="e.g., Python, JavaScript, React (comma separated)">
+                                <small class="form-text">Separate skills with commas</small>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="requiredExperience">
+                                        <i class="fas fa-briefcase"></i>
+                                        Required Experience (years)
+                                    </label>
+                                    <input type="number" id="requiredExperience" name="required_experience_years" 
+                                           placeholder="e.g., 3" min="0" step="1">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="requiredEducation">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        Required Education
+                                    </label>
+                                    <select id="requiredEducation" name="required_education">
+                                        <option value="">Select (optional)</option>
+                                        <option value="High School">High School</option>
+                                        <option value="Associate Degree">Associate Degree</option>
+                                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                        <option value="Master's Degree">Master's Degree</option>
+                                        <option value="PhD">PhD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="benefits">
+                                    <i class="fas fa-gift"></i>
+                                    Benefits
+                                </label>
+                                <textarea id="benefits" name="benefits" rows="3" 
+                                          placeholder="e.g., Health insurance, 401k, Remote work..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="applicationDeadline">
+                                    <i class="fas fa-calendar"></i>
+                                    Application Deadline
+                                </label>
+                                <input type="date" id="applicationDeadline" name="application_deadline">
+                            </div>
+                            
+                            <div id="errorMessage" class="error-message" style="display: none;"></div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" onclick="window.history.back()">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="postJobBtn">
+                                    <span class="btn-text">Post Job</span>
+                                    <span class="btn-loader" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="upload-info">
+                        <h3>Tips for better responses</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-bullseye"></i>
+                                <div>
+                                    <strong>Clear Job Title</strong>
+                                    <p>Use standard job titles that candidates search for</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-list-ul"></i>
+                                <div>
+                                    <strong>Detailed Description</strong>
+                                    <p>Include specific responsibilities and requirements</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-tags"></i>
+                                <div>
+                                    <strong>Relevant Skills</strong>
+                                    <p>List all required and preferred skills for better matching</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-dollar-sign"></i>
+                                <div>
+                                    <strong>Competitive Salary</strong>
+                                    <p>Provide salary range to attract qualified candidates</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <strong>Company Benefits</strong>
+                                    <p>Highlight unique benefits and company culture</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="ai-tip">
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <strong>AI-Powered Matching</strong>
+                                <p>Our AI will automatically match this job with qualified candidates based on skills and experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/recruiter.js"></script>
+</body>
+</html>

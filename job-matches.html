@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Matches - AI Job Portal</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as upload-resume.html) -->
+        <aside class="sidebar" id="sidebar">
+            <!-- ... sidebar content ... -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar (same as upload-resume.html) -->
+            <header class="top-bar">
+                <!-- ... top bar content ... -->
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <div class="page-header">
+                    <h1 class="page-title">Your Job Matches</h1>
+                    <div class="match-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="high">High Match (80%+)</button>
+                        <button class="filter-btn" data-filter="medium">Medium Match (50-79%)</button>
+                        <button class="filter-btn" data-filter="low">Low Match (Below 50%)</button>
+                    </div>
+                </div>
+                
+                <div class="loading-spinner" id="loadingSpinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Analyzing your resume and finding matches...</p>
+                </div>
+                
+                <div class="error-message" id="errorMessage" style="display: none;"></div>
+                
+                <div class="matches-container" id="matchesContainer" style="display: none;">
+                    <!-- Job matches will be loaded here -->
+                </div>
+                
+                <div class="no-matches" id="noMatches" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No Matching Jobs Found</h3>
+                    <p>Try uploading a different resume or check back later for new opportunities.</p>
+                    <a href="upload-resume.html" class="btn btn-primary">Upload Resume</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="jobDetails"></div>
+        </div>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/jobseeker.js"></script>
+</body>
+</html>

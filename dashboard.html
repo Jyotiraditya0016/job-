@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Dashboard - AI Job Portal</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-robot"></i>
+                <span>AI Job Portal</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="upload-resume.html" class="nav-item">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload Resume</span>
+                </a>
+                <a href="job-matches.html" class="nav-item">
+                    <i class="fas fa-magic"></i>
+                    <span>Job Matches</span>
+                </a>
+                <a href="applications.html" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search jobs...">
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile" id="userProfile">
+                        <img src="../../assets/images/default-avatar.png" alt="Profile">
+                        <span>John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <h1 class="page-title">Dashboard</h1>
+                
+                <!-- Stats Cards -->
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Applications</h3>
+                            <div class="number" id="totalApplications">12</div>
+                            <div class="trend up">
+                                <i class="fas fa-arrow-up"></i> +3 this week
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Profile Views</h3>
+                            <div class="number" id="profileViews">45</div>
+                            <div class="trend up">
+                                <i class="fas fa-arrow-up"></i> +12 this week
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Job Matches</h3>
+                            <div class="number" id="jobMatches">28</div>
+                            <div class="trend">
+                                <i class="fas fa-minus"></i> Based on your skills
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Pending Reviews</h3>
+                            <div class="number" id="pendingReviews">5</div>
+                            <div class="trend down">
+                                <i class="fas fa-arrow-down"></i> -2 from last week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Application Trends</h3>
+                            <div class="chart-actions">
+                                <select id="applicationChartPeriod">
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30" selected>Last 30 days</option>
+                                    <option value="90">Last 90 days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="applicationsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Skills Distribution</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="table-container">
+                    <h3 class="chart-title">Recent Applications</h3>
+                    <table class="data-table" id="recentApplicationsTable">
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Company</th>
+                                <th>Applied Date</th>
+                                <th>Match Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentApplicationsBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Recommended Jobs -->
+                <div class="table-container mt-4">
+                    <h3 class="chart-title">Recommended for You</h3>
+                    <div class="jobs-grid" id="recommendedJobs">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/jobseeker.js"></script>
+    <script src="../../js/dashboard.js"></script>
+</body>
+</html>

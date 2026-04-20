@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Portal - Smart Resume Analyzer & Job Recommendations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Job Portal</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#jobs">Browse Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="pages/login.html" class="btn btn-outline">Login</a>
+                <a href="pages/register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>AI-Powered Job Portal with Resume Analyzer</h1>
+                <p>Upload your resume and let our AI find the perfect job match for you. Get personalized recommendations, skill gap analysis, and instant job matches.</p>
+                <div class="hero-buttons">
+                    <a href="pages/register.html" class="btn btn-primary btn-large">Get Started</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-large">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Jobs Posted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Job Seekers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5K+</span>
+                        <span class="stat-label">Companies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="PennWest.jpg" alt="AI Job Portal Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Platform</h2>
+            <p class="section-subtitle">Powered by advanced AI and machine learning algorithms</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Smart Resume Analysis</h3>
+                    <p>Our AI extracts skills, experience, and education from your resume using advanced NLP.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Intelligent Job Matching</h3>
+                    <p>Get matched with jobs using TF-IDF and cosine similarity algorithms.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Skill Gap Analysis</h3>
+                    <p>Identify missing skills and get personalized improvement suggestions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Resume Scoring</h3>
+                    <p>Get detailed scores on skills, experience, education, and formatting.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Recruiter Dashboard</h3>
+                    <p>Post jobs and get AI-ranked candidates automatically.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Scalable</h3>
+                    <p>Enterprise-grade security with role-based access control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to your dream job</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Upload Resume</h3>
+                    <p>Upload your resume in PDF or DOC format. Our AI immediately starts analyzing your profile.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Analysis</h3>
+                    <p>Our NLP algorithms extract skills, experience, and match with thousands of job descriptions.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Get Matches</h3>
+                    <p>Receive personalized job recommendations with match scores and skill gap analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section id="jobs" class="featured-jobs">
+        <div class="container">
+            <h2 class="section-title">Featured Jobs</h2>
+            <p class="section-subtitle">Discover opportunities matched to your skills</p>
+            
+            <div class="jobs-grid" id="featuredJobs">
+                <!-- Jobs will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center">
+                <a href="pages/jobs.html" class="btn btn-outline">Browse All Jobs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The AI matching is incredibly accurate. Found my dream job within a week of uploading my resume!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user1.jpg" alt="User">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>As a recruiter, the candidate ranking feature saves me hours of manual screening.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user2.jpg" alt="User">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Tech Recruiter</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The skill gap analysis helped me identify what to learn next. Landed a promotion!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/user3.jpg" alt="User">
+                        <div>
+                            <h4>Emily Rodriguez</h4>
+                            <p>Data Scientist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Job Portal</h3>
+                    <p>Revolutionizing job search with artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#jobs">Jobs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="pages/register.html">Create Account</a></li>
+                        <li><a href="pages/jobseeker/upload-resume.html">Upload Resume</a></li>
+                        <li><a href="pages/jobseeker/job-matches.html">Job Matches</a></li>
+                        <li><a href="pages/jobseeker/applications.html">Track Applications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Recruiters</h4>
+                    <ul>
+                        <li><a href="pages/register.html?role=recruiter">Post Jobs</a></li>
+                        <li><a href="pages/recruiter/view-applicants.html">Find Candidates</a></li>
+                        <li><a href="pages/recruiter/dashboard.html">Recruiter Dashboard</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Job Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
